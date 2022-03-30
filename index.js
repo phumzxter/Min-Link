@@ -22,13 +22,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "backend"))); 
+app.use(express.static(path.join(__dirname, "public"))); 
 
-app.use(express.static(path.join(__dirname, "backend", "min-link"))); 
+app.use(express.static(path.join(__dirname, "public", "min-link"))); 
 
 app.get("//*", function (req, res) { 
 
-  res.sendFile(path.join(__dirname, "backend", "min-link", "index.html")); 
+  res.sendFile(path.join(__dirname, "public", "min-link", "index.html")); 
 
 }); 
 
