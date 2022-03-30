@@ -25,7 +25,7 @@ using MERN according to the following:
 ## Frontend & Backend
 Github Repo: https://github.com/phumzxter/Min-Link-Src
 
-#### *** Unfortunately the backend part of the application has not been deployed onto heroku due to some errors, but locally everything works flawlessly. ***
+#### *** Unfortunately the backend part of the application has not been deployed onto heroku due to some errors, but locally everything works flawlessly. Please watch the youtube video. ***
 
 App Demo: https://min-linker.herokuapp.com
 
