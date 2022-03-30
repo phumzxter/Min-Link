@@ -24,13 +24,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public"))); 
 
-app.use(express.static(path.join(__dirname, "public", "min-link"))); 
+if (process.env.NODE_ENV === "production") {
 
-app.get("//*", function (req, res) { 
+  app.use(express.static(path.join(__dirname, "public", "min-link")));
 
-  res.sendFile(path.join(__dirname, "public", "min-link", "index.html")); 
+  app.get("*", (req, res) => {
 
-}); 
+  res.sendFile(path.resolve(__dirname, "public", "min-link", "index.html"));
+
+ });
+
+}
+
+// app.use(express.static(path.join(__dirname, "public", "min-link"))); 
+
+// app.get("//*", function (req, res) { 
+
+//   res.sendFile(path.join(__dirname, "public", "min-link", "index.html")); 
+
+// }); 
 
 app.post("/login", async function (req, res) {
   const { email, password } = req.body;
